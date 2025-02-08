@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Rigidbody rb;
+
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Grab()
     {
-        
+        rb.isKinematic = true;
+    }
+
+    public void Drop()
+    {
+        rb.isKinematic = true;
+    }
+
+    public void Throw(Vector3 throwVector)
+    {
+        Drop();
+
+        rb.linearVelocity = throwVector;
     }
 }
