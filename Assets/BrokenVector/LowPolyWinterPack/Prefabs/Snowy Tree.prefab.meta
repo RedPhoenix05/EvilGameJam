@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 2f87fc7da1871764a9567af5a82d7402
+labels:
+- LowPoly
+- Lowpoly
+- Winter
+- Christmas
+- low-poly
+- lowpolyart
+- SnowyTree
+- Tree
+timeCreated: 1482399796
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78938
+  packageName: Low Poly Winter Pack
+  packageVersion: 1.1
+  assetPath: Assets/BrokenVector/LowPolyWinterPack/Prefabs/Snowy Tree.prefab
+  uploadId: 253912
