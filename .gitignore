@@ -74,3 +74,5 @@ crashlytics-build.properties
 # Extra Ignores
 *.blend1
 *.blend1.meta
+/Assets/Alteruna/Resources
+Assets/Alteruna/Resources.meta
