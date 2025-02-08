@@ -17,8 +17,8 @@ public class InteractionController : MonoBehaviour
         if (interactionAction.action.WasPressedThisFrame())
         {
             bool valid = Physics.Raycast(interactionSource.position, interactionSource.forward, out RaycastHit rayInfo, maxDistance, interactionMask);
-            Interactable item = rayInfo.transform.GetComponentInParent<Interactable>();
-            valid &= item;
+            Interactable item = valid ? rayInfo.transform.GetComponentInParent<Interactable>() : null;
+            valid &= (bool) item;
             if (valid)
             {
                 GrabItem(item);
