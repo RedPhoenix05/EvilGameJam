@@ -1,7 +1,10 @@
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] Collider grabCollider;
+
     Rigidbody rb;
 
     void Awake()
@@ -9,14 +12,22 @@ public class Interactable : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Grab()
+    public void Grab(Transform attachTransform)
     {
         rb.isKinematic = true;
+
+        transform.parent = attachTransform;
+        transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        grabCollider.enabled = false;
     }
 
     public void Drop()
     {
-        rb.isKinematic = true;
+        rb.isKinematic = false;
+        transform.parent = null;
+
+        grabCollider.enabled = true;
     }
 
     public void Throw(Vector3 throwVector)
