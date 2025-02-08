@@ -1,6 +1,7 @@
 using UnityEngine;
 using static UnityEditor.Progress;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Interactable : MonoBehaviour
 {
     [SerializeField] Collider grabCollider;
