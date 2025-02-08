@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   interactionAction: {fileID: 1781555164194001046, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   interactionSource: {fileID: 4257340187936125567}
   maxDistance: 3
@@ -168,6 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4257340187936125567}
+  - component: {fileID: 2160020211973238484}
   m_Layer: 0
   m_Name: Camera Follower
   m_TagString: Untagged
@@ -184,12 +185,25 @@ Transform:
   m_GameObject: {fileID: 4344265708925440314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0116278, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8060970599635416809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2160020211973238484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344265708925440314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fc5284e9d13b341b4a8ce11a2d7336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 8060970599635416809}
 --- !u!1 &8355789445778552311
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 8355789445778552311}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0116278, z: 0}
+  m_LocalPosition: {x: 0.473, y: 1.128, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
