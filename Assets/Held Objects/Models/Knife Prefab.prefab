@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4137576822043294984}
   - component: {fileID: 5381546948215539007}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: GrabCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729851332dffd9c44b048ef37486cb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabCollider: {fileID: 5381546948215539007}
 --- !u!54 &8189303765560416933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,7 +127,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1001 &8750242151087176262
 PrefabInstance:
   m_ObjectHideFlags: 0

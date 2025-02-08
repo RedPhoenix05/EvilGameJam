@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9051011723810430048}
   - component: {fileID: 6530080955370317156}
   - component: {fileID: 4395542020461558461}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Shovel Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &4395542020461558461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729851332dffd9c44b048ef37486cb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabCollider: {fileID: 1493787077233525224}
 --- !u!1 &7855343883879027092
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 5765095623664046674}
   - component: {fileID: 1493787077233525224}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: GrabCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
