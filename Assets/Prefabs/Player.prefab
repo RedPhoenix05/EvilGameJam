@@ -136,7 +136,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
-  cameraYOffset: 0.4
+  cameraYOffset: 1.546332
 --- !u!1001 &6998133539036694671
 PrefabInstance:
   m_ObjectHideFlags: 0
