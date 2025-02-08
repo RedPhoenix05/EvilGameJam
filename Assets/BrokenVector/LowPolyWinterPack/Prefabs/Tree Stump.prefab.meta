@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 65f0fe14b112de24abab304250ff4981
+labels:
+- LowPoly
+- Lowpoly
+- Winter
+- Christmas
+- low-poly
+- lowpolyart
+- Tree
+- DeadTree
+timeCreated: 1482400312
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78938
+  packageName: Low Poly Winter Pack
+  packageVersion: 1.1
+  assetPath: Assets/BrokenVector/LowPolyWinterPack/Prefabs/Tree Stump.prefab
+  uploadId: 253912
