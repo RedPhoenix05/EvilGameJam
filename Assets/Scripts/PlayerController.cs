@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         isRunning = Input.GetKey(KeyCode.LeftShift);
 
         // Press z to run
-        isSliding = Input.GetKey(KeyCode.LeftControl)
+        isSliding = Input.GetKey(KeyCode.LeftControl);
 
         // We are grounded, so recalculate move direction based on axis
         Vector3 forward = transform.TransformDirection(Vector3.forward);
