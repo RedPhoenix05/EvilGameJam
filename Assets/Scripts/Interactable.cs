@@ -7,11 +7,18 @@ public class Interactable : MonoBehaviour
     [SerializeField] Collider grabCollider;
     [SerializeField] List<Collider> disableOnGrab = new();
 
+    [SerializeField] bool teleportHome;
+    [SerializeField] float teleportTimer = 20.0f;
+
     Rigidbody rb;
+    Vector3 originalPosition = Vector3.zero;
+    Quaternion originalRotation = Quaternion.identity;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
     }
 
     public void Grab(Transform attachTransform)
@@ -27,6 +34,8 @@ public class Interactable : MonoBehaviour
         {
             collider.enabled = false;
         }
+
+        CancelInvoke(nameof(TeleportHome));
     }
 
     public void Drop()
@@ -40,6 +49,8 @@ public class Interactable : MonoBehaviour
         {
             collider.enabled = true;
         }
+
+        Invoke(nameof(TeleportHome), teleportTimer);
     }
 
     public void Throw(Vector3 throwVector, float throwAngularVelocity)
@@ -48,5 +59,11 @@ public class Interactable : MonoBehaviour
 
         rb.velocity = throwVector;
         rb.angularVelocity = new Vector3(throwAngularVelocity * 360 * Mathf.Deg2Rad, 0.0f, 0.0f);
+    }
+
+    void TeleportHome()
+    {
+        transform.SetPositionAndRotation(originalPosition, originalRotation);
+        rb.isKinematic = true;
     }
 }
