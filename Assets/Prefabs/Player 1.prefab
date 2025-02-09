@@ -135,6 +135,7 @@ MonoBehaviour:
   maxDistance: 3
   attachTransform: {fileID: 8582759204849138029}
   throwVelocity: 20
+  throwAngularVelocity: 6
 --- !u!1 &7032874510151741747
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  invincibilityTime: 0.25
   healthRegenDelay: 5
   healthRegenRate: 10
   health: 0
@@ -255,6 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e27036c06ff8da468b572bd41abe26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackAction: {fileID: 1120369429361536294, guid: 59f3e3ca93c9f6041bfe9a85a85d4ae2, type: 3}
+  snowball: {fileID: 5833802174459028683, guid: 6240f707f52326f43afd06481ba9af58, type: 3}
+  ammo: 0
+  maxAmmo: 3
+  ammoChargeRate: 1
+  throwVelocity: 30
+  attackDelay: 0.33
   turnAction: {fileID: -5630151704836100654, guid: 59f3e3ca93c9f6041bfe9a85a85d4ae2, type: 3}
   turnSpeed: 270
   movementSource: {fileID: 6888074539683677651}
@@ -450,10 +459,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2112
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 14775
+    m_Bits: 12727
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -474,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 2
-  collisionEventHandler: {fileID: 0}
+  collisionEventHandler: {fileID: 1104572979915050940}
 --- !u!114 &1104572979915050940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,10 +529,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2112
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 14775
+    m_Bits: 12727
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -544,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 1
-  collisionEventHandler: {fileID: 0}
+  collisionEventHandler: {fileID: 5173649252532052223}
 --- !u!114 &5173649252532052223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,10 +599,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2112
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 14775
+    m_Bits: 12727
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -614,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 1
-  collisionEventHandler: {fileID: 0}
+  collisionEventHandler: {fileID: 5751479156990759433}
 --- !u!114 &5751479156990759433
 MonoBehaviour:
   m_ObjectHideFlags: 0
