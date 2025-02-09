@@ -31,14 +31,14 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.transform);
-        if (collision.collider.GetComponent<HealthTarget>())
+        //Debug.Log(collision.collider.transform);
+        if (collision.collider.transform.GetComponent<HealthTarget>())
         {
             //Debug.Log(collision.collider);
             Vector3 velocity = rb.velocity;
-            if (collision.collider.GetComponentInParent<Rigidbody>())
+            if (collision.collider.transform.GetComponentInParent<Rigidbody>())
             {
-                velocity -= collision.collider.GetComponentInParent<Rigidbody>().velocity;
+                velocity -= collision.collider.transform.GetComponentInParent<Rigidbody>().velocity;
             }
             if (velocity.magnitude >= minVelocity)
             {
@@ -46,8 +46,27 @@ public class Projectile : MonoBehaviour
                 float alpha = (velocity.magnitude - minVelocity) / (maxVelocity - minVelocity);
                 float velocityDamage = Mathf.Lerp(minVelocityDamage, maxVelocityDamage, alpha);
                 damage += velocityDamage;
-                collision.collider.GetComponent<HealthTarget>().Damage(damage);
+                collision.collider.transform.GetComponent<HealthTarget>().Damage(damage);
             }
+        }
+        else if (collision.collider.transform.GetComponentInParent<HealthSystem>())
+        {
+
+            Vector3 velocity = rb.velocity;
+            if (collision.collider.transform.GetComponentInParent<Rigidbody>())
+            {
+                velocity -= collision.collider.transform.GetComponentInParent<Rigidbody>().velocity;
+            }
+            if (velocity.magnitude >= minVelocity)
+            {
+                float damage = baseDamage + timeDamage;
+                float alpha = (velocity.magnitude - minVelocity) / (maxVelocity - minVelocity);
+                float velocityDamage = Mathf.Lerp(minVelocityDamage, maxVelocityDamage, alpha);
+                damage += velocityDamage;
+
+                collision.collider.transform.GetComponentInParent<HealthSystem>().Damage(damage);
+            }
+            //Debug.LogWarning("damage!");
         }
 
         if (destroyOnCollision)
