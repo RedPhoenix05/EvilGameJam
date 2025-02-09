@@ -12,7 +12,17 @@ public class MovementController : MonoBehaviour
     Rigidbody controlledRigidbody;
     CapsuleCollider controlledCollider;
 
-    [Header("Rotation")]
+    [Header("Attack")]
+    [SerializeField] InputActionReference attackAction;
+    [SerializeField] GameObject snowball;
+    [SerializeField] float ammo = 0.0f;
+    [SerializeField] float maxAmmo = 3.0f;
+    [SerializeField] float ammoChargeRate = 1.0f;
+    [SerializeField] float throwVelocity = 30.0f;
+    [SerializeField] float attackDelay = 0.33f;
+    bool attackCooldown = false;
+
+    [Space, Header("Rotation")]
     [SerializeField] InputActionReference turnAction;
     [SerializeField] float turnSpeed = 270.0f;
 
@@ -140,10 +150,34 @@ public class MovementController : MonoBehaviour
             rotY *= 0.5f;
         }
         transform.rotation *= Quaternion.Euler(0.0f, rotY , 0.0f);
+
+
+        // Snowballs
+        if (!attackCooldown && ammo >= 1.0f && attackAction.action.WasPressedThisFrame())
+        {
+            ammo--;
+            Projectile projectile = Instantiate(snowball).GetComponent<Projectile>();
+            projectile.transform.position = movementSource.position + (movementSource.forward * 1.0f);
+            projectile.GetComponent<Rigidbody>().velocity = movementSource.forward * throwVelocity;
+
+            attackCooldown = true;
+            Invoke(nameof(DisableAttackCooldown), attackDelay);
+        }
+    }
+
+    void DisableAttackCooldown()
+    {
+        attackCooldown = false;
     }
 
     private void FixedUpdate()
     {
+        if (sliding)
+        {
+            ammo += ammoChargeRate * Time.fixedDeltaTime;
+            ammo = Mathf.Clamp(ammo, 0.0f, maxAmmo);
+        }
+
         stickVector = ReadInput();
         moveDirection = ComputeMove(stickVector);
 
