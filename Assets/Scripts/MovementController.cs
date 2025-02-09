@@ -20,6 +20,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] float ammoChargeRate = 1.0f;
     [SerializeField] float throwVelocity = 30.0f;
     [SerializeField] float attackDelay = 0.33f;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip throwSound;
     bool attackCooldown = false;
 
     [Space, Header("Rotation")]
@@ -156,6 +158,7 @@ public class MovementController : MonoBehaviour
         if (!attackCooldown && ammo >= 1.0f && attackAction.action.WasPressedThisFrame())
         {
             ammo--;
+            source.PlayOneShot(throwSound);
             Projectile projectile = Instantiate(snowball).GetComponent<Projectile>();
             projectile.transform.position = movementSource.position + (movementSource.forward * 1.0f);
             projectile.GetComponent<Rigidbody>().velocity = movementSource.forward * throwVelocity;

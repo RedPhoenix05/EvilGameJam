@@ -10,15 +10,21 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] float healthRegenDelay = 5.0f;
     [SerializeField] float healthRegenRate = 10.0f;
     public float health = 0;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip damageSound;
 
     [HideInInspector] public UnityEvent<float> damageEvent;
     bool regenCooldown = false;
     bool hurtCooldown = false;
 
+    Vector3 spawnPoint = Vector3.zero;
+
     private void Awake()
     {
         damageEvent.AddListener(Damage);
         health = maxHealth;
+        spawnPoint = transform.position;
     }
 
     private void FixedUpdate()
@@ -37,6 +43,7 @@ public class HealthSystem : MonoBehaviour
             hurtCooldown = true;
             Invoke(nameof(DisableHurtCooldown), invincibilityTime);
 
+            source.PlayOneShot(damageSound);
 
             health -= damage;
             if (health <= 0.0f)
@@ -63,5 +70,16 @@ public class HealthSystem : MonoBehaviour
     public void Die()
     {
         Debug.Log(gameObject + " has died.");
+        source.PlayOneShot(deathSound);
+        transform.position = transform.position + Vector3.up * 50.0f;
+        GetComponent<Rigidbody>().isKinematic = true;
+        Invoke(nameof(Respawn), 5.0f);
+    }
+
+    void Respawn()
+    {
+        GetComponent<Rigidbody>().isKinematic = false;
+        health = maxHealth;
+        transform.position = spawnPoint;
     }
 }
