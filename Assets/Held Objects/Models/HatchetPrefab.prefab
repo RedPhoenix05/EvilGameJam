@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 657162022119633888}
   - component: {fileID: 6615634106657511682}
   - component: {fileID: 4953507950510913230}
+  - component: {fileID: 7109075469237469877}
   m_Layer: 11
   m_Name: HatchetPrefab
   m_TagString: Untagged
@@ -47,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabCollider: {fileID: 7803860155088151456}
+  disableOnGrab:
+  - {fileID: 279581966687501493}
+  - {fileID: 602363362359322535}
 --- !u!54 &4953507950510913230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74,6 +78,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &7109075469237469877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703776017609289581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422adf43f39eb4b49acec09cbe981c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 0
+  timeDamageScale: 20
+  maxTimeDamage: 60
+  minVelocity: 15
+  maxVelocity: 40
+  minVelocityDamage: 25
+  maxVelocityDamage: 50
+  destroyOnCollision: 0
 --- !u!1 &4008639177737585353
 GameObject:
   m_ObjectHideFlags: 0
