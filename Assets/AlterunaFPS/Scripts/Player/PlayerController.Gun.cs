@@ -111,9 +111,9 @@ namespace AlterunaFPS
 					if (Input.GetKeyDown(KeyCode.Mouse0) && _gunMagazine > 0)
 					{
 						if (_offline)
-							FireBullet(0, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
+							FireBullet(projectileInstantiator, 0, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
                         else
-							BroadcastRemoteMethod(nameof(FireBullet), Multiplayer.GetUser().Index, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
+							BroadcastRemoteMethod(nameof(FireBullet), projectileInstantiator, Multiplayer.GetUser().Index, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
 						//FireBullet(FirePoint.position, FirePoint.forward);
 						return;
 					}
@@ -133,7 +133,7 @@ namespace AlterunaFPS
 		}
 		
 		[SynchronizableMethod]
-		private void FireBullet(ushort senderID, Transform source, List<Collider> ignoredColliders, float baseDamage = 10f, float timeScale = 10f, float velocity = 20.0f)
+		private void FireBullet(Spawner projectileInstantiator, ushort senderID, Transform source, List<Collider> ignoredColliders, float baseDamage = 10f, float timeScale = 10f, float velocity = 20.0f)
         {
             if (_isOwner)
 			{
