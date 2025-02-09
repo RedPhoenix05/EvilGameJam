@@ -1,29 +1,22 @@
-﻿using Alteruna;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
+/*
 namespace AlterunaFPS
 {
 	public partial class PlayerController
 	{
-		[Header("Gun")]
-		public Spawner projectileInstantiator;
-		public List<Collider> ignoredColliders = new();
-		public float projectileVelocity = 20.0f;
-		public float projectileBaseDamage = 10.0f;
-		public float projectileTimeScale = 10.0f;
 		
-		[Header("Gun Extras")]
-        //public Transform GunRoot;
-        public Transform FirePoint;
+		[Header("Gun")]
+		public Transform GunRoot;
+		public Transform FirePoint;
 		public IKControl IKController;
 		public Animator GunAnimator;
 		public LayerMask BulletCollisionLayers = ~0;
 		public int GunMagazineSize = 5;
 		public float GunFireTime = 0.2f;
 		public float GunReloadTime = 2.35f;
-		//public float DistanceFromBody = 0.3f;
+		public float DistanceFromBody = 0.3f;
 		[Header("Aiming")]
 		public float ZoomFov = 30f;
 		public float ZoomInTime = 0.2f;
@@ -33,18 +26,18 @@ namespace AlterunaFPS
 		private float _gunReloadCooldown;
 		private int _gunMagazine;
 		
-		//private float _gunBaseHeight;
+		private float _gunBaseHeight;
 		
 		private Transform _gunLooker;
 
 		private void InitializeGun()
 		{
-			//_gunBaseHeight = GunRoot.localPosition.y;
+			_gunBaseHeight = GunRoot.localPosition.y;
 			
 			// create a new object to help manage the gun rotation
-			//_gunLooker = new GameObject("GunLooker").transform;
-			//_gunLooker.SetParent(GunRoot);
-			//_gunLooker.position = GunRoot.position;
+			_gunLooker = new GameObject("GunLooker").transform;
+			_gunLooker.SetParent(GunRoot);
+			_gunLooker.position = GunRoot.position;
 		}
 
 		private void ResetAmmo()
@@ -65,7 +58,7 @@ namespace AlterunaFPS
 			
 			if (GunAnimator != null)
 			{
-				/*
+
 				if (_firstPerson || Quaternion.Angle(_cameraTarget.rotation, GunRoot.parent.rotation) < 50)
 				{
 					
@@ -97,7 +90,6 @@ namespace AlterunaFPS
 				}
 
 				IKController.IkActive = true;
-				*/
 				
 				// if the gun is firing or reloading, don't allow any other actions
 				if ((_gunFireCooldown -= Time.deltaTime) > 0 || (_gunReloadCooldown -= Time.deltaTime) > 0)
@@ -111,9 +103,9 @@ namespace AlterunaFPS
 					if (Input.GetKeyDown(KeyCode.Mouse0) && _gunMagazine > 0)
 					{
 						if (_offline)
-							FireBullet(0, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
-                        else
-							BroadcastRemoteMethod(nameof(FireBullet), Multiplayer.GetUser().Index, FirePoint, ignoredColliders, projectileBaseDamage, projectileTimeScale, projectileVelocity);
+							FireBullet(0, FirePoint.position, FirePoint.forward);
+						else
+							BroadcastRemoteMethod(nameof(FireBullet), Multiplayer.GetUser().Index, FirePoint.position, FirePoint.forward, 10f, 10f);
 						//FireBullet(FirePoint.position, FirePoint.forward);
 						return;
 					}
@@ -133,15 +125,8 @@ namespace AlterunaFPS
 		}
 		
 		[SynchronizableMethod]
-		private void FireBullet(ushort senderID, Transform source, List<Collider> ignoredColliders, float baseDamage = 10f, float timeScale = 10f, float velocity = 20.0f)
-        {
-            if (_isOwner)
-			{
-				GameObject projectile = projectileInstantiator.Spawn(0, source.position, source.rotation);
-				projectile.GetComponent<Snowball>().SetUp(senderID, ignoredColliders, baseDamage, timeScale, source.forward * velocity);
-            }
-			
-            /*
+		private void FireBullet(ushort senderID, Vector3 origin, Vector3 direction, float penetration = 10f, float damage = 10f)
+		{
 			GunAnimator.Play(_animIDGunFire);
 			
 			_gunFireCooldown = GunFireTime;
@@ -204,7 +189,7 @@ namespace AlterunaFPS
 				else
 					Debug.DrawLine(hits[i - 1].point, hits[i].point, color, duration);
 			}
-			*/
-        }
+		}
 	}
 }
+*/
