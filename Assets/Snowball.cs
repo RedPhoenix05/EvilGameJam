@@ -43,7 +43,10 @@ public class Snowball : MonoBehaviour
             }
         }
 
-        instantiator.Despawn(gameObject);
+        if (instantiator && gameObject)
+        {
+            instantiator.Despawn(gameObject);
+        }
     }
 
     public void SetUp(Spawner instantiator, ushort ownerID, List<Collider> ignoredColliders, float baseDamage, float timeScale, Vector3 velocity)
