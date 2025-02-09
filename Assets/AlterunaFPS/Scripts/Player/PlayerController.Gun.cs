@@ -39,6 +39,9 @@ namespace AlterunaFPS
 
 		private void InitializeGun()
 		{
+			projectileInstantiator = FindFirstObjectByType<Spawner>();
+			Debug.Log(projectileInstantiator);
+
 			_gunBaseHeight = GunRoot.localPosition.y;
 			
 			 //create a new object to help manage the gun rotation
