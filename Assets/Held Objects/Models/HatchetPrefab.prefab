@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 657162022119633888}
   - component: {fileID: 6615634106657511682}
   - component: {fileID: 4953507950510913230}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: HatchetPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3703776017609289581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729851332dffd9c44b048ef37486cb73, type: 3}
+  m_Script: {fileID: 11500000, guid: 42b6795a6f5a5c64aa01c3662a11499a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grabCollider: {fileID: 7803860155088151456}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4043565644177832699}
   - component: {fileID: 7803860155088151456}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GrabCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2217560088197638845}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 5668d6a73a986c14f8ea6d995b70c922, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5668d6a73a986c14f8ea6d995b70c922, type: 3}
       propertyPath: m_Name
@@ -178,11 +178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5668d6a73a986c14f8ea6d995b70c922, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 5668d6a73a986c14f8ea6d995b70c922, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5668d6a73a986c14f8ea6d995b70c922, type: 3}
       propertyPath: m_LocalScale.x

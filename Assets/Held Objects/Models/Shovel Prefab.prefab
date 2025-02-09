@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7071132009259461467}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,8 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9051011723810430048}
   - component: {fileID: 6530080955370317156}
-  - component: {fileID: 4395542020461558461}
-  m_Layer: 10
+  - component: {fileID: 1387179962574023432}
+  m_Layer: 11
   m_Name: Shovel Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +61,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7071132009259461467}
   m_Father: {fileID: 0}
@@ -94,7 +94,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &4395542020461558461
+--- !u!114 &1387179962574023432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6705234074645829195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729851332dffd9c44b048ef37486cb73, type: 3}
+  m_Script: {fileID: 11500000, guid: 42b6795a6f5a5c64aa01c3662a11499a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grabCollider: {fileID: 1493787077233525224}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5765095623664046674}
   - component: {fileID: 1493787077233525224}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GrabCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f115a2a3214ce944d8a2bb46a556083d, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f115a2a3214ce944d8a2bb46a556083d, type: 3}
       propertyPath: m_LocalScale.x
