@@ -1872,6 +1872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6187701971144763877}
   - component: {fileID: 969681678009396848}
+  - component: {fileID: 7474262776366244186}
   m_Layer: 7
   m_Name: Hitbox
   m_TagString: Untagged
@@ -1917,6 +1918,26 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7474262776366244186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281731790374813600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee3d9f35dac4beaafe4b368559bacfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 1709546744555315895}
+  MaterialType: 0
+  PenetrationResistance: 0.5
+  DamageMultiplier: 1
+  HealthPoints: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4441961347219758026
 GameObject:
   m_ObjectHideFlags: 0
