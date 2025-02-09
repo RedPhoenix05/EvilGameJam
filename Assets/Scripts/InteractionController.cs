@@ -11,6 +11,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] float maxDistance = 3.0f;
     [SerializeField] Transform attachTransform;
     [SerializeField] float throwVelocity = 20.0f;
+    [SerializeField] float throwAngularVelocity = 6.0f;
 
     Interactable selectedItem;
 
@@ -30,7 +31,9 @@ public class InteractionController : MonoBehaviour
             {
                 if (selectedItem)
                 {
-                    selectedItem.Throw(interactionSource.forward * throwVelocity);
+                    TryGetComponent(out Rigidbody rb);
+                    Vector3 velocity = (rb) ? ((interactionSource.forward * throwVelocity) + rb.velocity) : (interactionSource.forward * throwVelocity);
+                    selectedItem.Throw(velocity, throwAngularVelocity);
                     selectedItem = null;
                 }
             }
