@@ -1,3 +1,4 @@
+using Alteruna;
 using AlterunaFPS;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class Snowball : MonoBehaviour
 
     float damage = 0.0f;
     Collider thisCollider;
+    
+    Spawner instantiator;
 
     private void Awake()
     {
@@ -40,11 +43,13 @@ public class Snowball : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        instantiator.Despawn(gameObject);
     }
 
-    public void SetUp(ushort ownerID, List<Collider> ignoredColliders, float baseDamage, float timeScale, Vector3 velocity)
+    public void SetUp(Spawner instantiator, ushort ownerID, List<Collider> ignoredColliders, float baseDamage, float timeScale, Vector3 velocity)
     {
+        this.instantiator = instantiator;
+
         this.ownerID = ownerID;
         this.baseDamage = baseDamage;
         this.timeScale = timeScale;

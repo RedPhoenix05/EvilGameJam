@@ -138,7 +138,7 @@ namespace AlterunaFPS
             if (_isOwner)
 			{
 				GameObject projectile = projectileInstantiator.Spawn(0, source.position, source.rotation);
-				projectile.GetComponent<Snowball>().SetUp(senderID, ignoredColliders, baseDamage, timeScale, source.forward * velocity);
+				projectile.GetComponent<Snowball>().SetUp(projectileInstantiator, senderID, ignoredColliders, baseDamage, timeScale, source.forward * velocity);
             }
 			
             
