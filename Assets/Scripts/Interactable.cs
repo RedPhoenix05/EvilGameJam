@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
 
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip throwSound;
+    [SerializeField] AudioClip pickupSound;
 
     Rigidbody rb;
     Vector3 originalPosition = Vector3.zero;
@@ -27,6 +28,8 @@ public class Interactable : MonoBehaviour
     public void Grab(Transform attachTransform)
     {
         rb.isKinematic = true;
+
+        source.PlayOneShot(pickupSound);
 
         transform.parent = attachTransform;
         transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
