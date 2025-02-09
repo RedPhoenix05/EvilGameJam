@@ -41,7 +41,7 @@ public class InteractionController : MonoBehaviour
     {
         if (selectedItem)
         {
-            item.Drop();
+            selectedItem.Drop();
         }
 
         item.Grab(attachTransform);
