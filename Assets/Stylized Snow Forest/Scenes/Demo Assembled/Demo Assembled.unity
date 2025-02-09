@@ -5124,21 +5124,29 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1455437405}
+    - target: {fileID: 5471445689971230278, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6859754325836441046, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
       propertyPath: m_Name
       value: Audio Listener
       objectReference: {fileID: 0}
+    - target: {fileID: 6859754325836441046, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8582277447681752387, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.0818
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8582277447681752387, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45.092346
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8582277447681752387, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 112.0594
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8582277447681752387, guid: 2a740daadd88b504896be3886cb6fdf7, type: 3}
       propertyPath: m_LocalRotation.w
