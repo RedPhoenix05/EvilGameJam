@@ -6,12 +6,14 @@ using UnityEngine.Events;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100.0f;
+    [SerializeField] float invincibilityTime = 0.25f;
     [SerializeField] float healthRegenDelay = 5.0f;
     [SerializeField] float healthRegenRate = 10.0f;
     public float health = 0;
 
     [HideInInspector] public UnityEvent<float> damageEvent;
     bool regenCooldown = false;
+    bool hurtCooldown = false;
 
     private void Awake()
     {
@@ -30,20 +32,32 @@ public class HealthSystem : MonoBehaviour
 
     public void Damage(float damage)
     {
-        health -= damage;
-        if (health <= 0.0f)
+        if (!hurtCooldown && damage > 0.0f)
         {
-            Die();
-        }
+            hurtCooldown = true;
+            Invoke(nameof(DisableHurtCooldown), invincibilityTime);
 
-        regenCooldown = true;
-        CancelInvoke(nameof(DisableRegenCooldown));
-        Invoke(nameof(DisableRegenCooldown), healthRegenDelay);
+
+            health -= damage;
+            if (health <= 0.0f)
+            {
+                Die();
+            }
+
+            regenCooldown = true;
+            CancelInvoke(nameof(DisableRegenCooldown));
+            Invoke(nameof(DisableRegenCooldown), healthRegenDelay);
+        }
     }
 
     private void DisableRegenCooldown()
     {
         regenCooldown = false;
+    }
+
+    private void DisableHurtCooldown()
+    {
+        hurtCooldown = false;
     }
 
     public void Die()
