@@ -6746,6 +6746,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7824373649487966199, guid: a2c22b0046bb6c848ad229832e38ff4f, type: 3}
   m_PrefabInstance: {fileID: 360811012}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &405104097 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6288957324544654574, guid: a2c22b0046bb6c848ad229832e38ff4f, type: 3}
+  m_PrefabInstance: {fileID: 360811012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &405104100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6755,11 +6760,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 405104096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 449834599}
-  _uidString: 8b31824e-3ab3-40dd-a1cb-f2683c4ee89f
+  _uidString: 0961b700-4bed-4523-8b3d-fec6a2572d5b
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -6776,11 +6781,13 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
-  UseGlobalPosition: 1
-  OnlySyncFromRoomOwner: 0
-  refreshRate: 30
-  SyncedAxes: 511
+  Reliability: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 405104097}
 --- !u!1001 &407314106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9279,6 +9286,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3703776017609289581, guid: a0bb67473dc20864e9ccc8f800d0d781, type: 3}
   m_PrefabInstance: {fileID: 1594697637}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &531050397 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4953507950510913230, guid: a0bb67473dc20864e9ccc8f800d0d781, type: 3}
+  m_PrefabInstance: {fileID: 1594697637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &531050400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9288,11 +9300,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 531050396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 449834599}
-  _uidString: 8628b89e-bed1-4889-adc4-f3138c88eedb
+  _uidString: a0ec59ae-4cc3-4d7a-9921-9faf944846ba
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -9309,11 +9321,13 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
-  UseGlobalPosition: 1
-  OnlySyncFromRoomOwner: 0
-  refreshRate: 30
-  SyncedAxes: 511
+  Reliability: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 531050397}
 --- !u!1001 &539289196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13642,6 +13656,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3703776017609289581, guid: a0bb67473dc20864e9ccc8f800d0d781, type: 3}
   m_PrefabInstance: {fileID: 1322802929}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &899873905 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4953507950510913230, guid: a0bb67473dc20864e9ccc8f800d0d781, type: 3}
+  m_PrefabInstance: {fileID: 1322802929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &899873908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13651,11 +13670,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 899873904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 449834599}
-  _uidString: 92c27c3f-0cd9-48b2-b88b-beadec6a6667
+  _uidString: d1d88e9c-2428-45d2-9003-3d9117a93852
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -13672,11 +13691,13 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
-  UseGlobalPosition: 1
-  OnlySyncFromRoomOwner: 0
-  refreshRate: 30
-  SyncedAxes: 511
+  Reliability: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 899873905}
 --- !u!1001 &900518010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19036,6 +19057,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6705234074645829195, guid: 89e563d2e085d3941ab600c6ad1bb93f, type: 3}
   m_PrefabInstance: {fileID: 1787031317}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1249815444 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6530080955370317156, guid: 89e563d2e085d3941ab600c6ad1bb93f, type: 3}
+  m_PrefabInstance: {fileID: 1787031317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1249815446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19045,11 +19071,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249815442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 449834599}
-  _uidString: 2988b91a-95bd-453b-ad3c-5349d40c1837
+  _uidString: 5a38927e-1983-4a36-a71c-62054f9c52aa
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -19066,11 +19092,13 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
-  UseGlobalPosition: 1
-  OnlySyncFromRoomOwner: 0
-  refreshRate: 30
-  SyncedAxes: 511
+  Reliability: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 1249815444}
 --- !u!1001 &1259065339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29621,6 +29649,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8504167741087382739, guid: 70c2204cda447a442a0933483dffa189, type: 3}
   m_PrefabInstance: {fileID: 952161579}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1897041160 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8189303765560416933, guid: 70c2204cda447a442a0933483dffa189, type: 3}
+  m_PrefabInstance: {fileID: 952161579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1897041163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29630,11 +29663,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897041159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 449834599}
-  _uidString: ac0f7403-b19f-4a6a-8147-47ccd8263142
+  _uidString: 477f3daa-9548-4715-8278-c614a6ff7d31
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -29651,11 +29684,13 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
-  UseGlobalPosition: 1
-  OnlySyncFromRoomOwner: 0
-  refreshRate: 30
-  SyncedAxes: 511
+  Reliability: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 1897041160}
 --- !u!1001 &1900797305
 PrefabInstance:
   m_ObjectHideFlags: 0
