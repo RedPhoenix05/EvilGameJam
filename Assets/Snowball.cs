@@ -45,7 +45,7 @@ public class Snowball : MonoBehaviour
 
         if (instantiator && gameObject)
         {
-            instantiator.Despawn(gameObject);
+            Invoke(nameof(Cleanup), 0.5f);
         }
     }
 
@@ -62,5 +62,10 @@ public class Snowball : MonoBehaviour
         {
             Physics.IgnoreCollision(thisCollider, ignoredCollider);
         }
+    }
+
+    void Cleanup()
+    {
+        instantiator.Despawn(gameObject);
     }
 }
