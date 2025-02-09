@@ -12,9 +12,11 @@ namespace AlterunaFPS
 		private SyncedKey _jump;
 		private SyncedKey _sprint;
 		private SyncedKey _reload;
-		private SyncedKey _camera;
-		
-		private InputSynchronizable _input;
+        private SyncedKey _camera;
+
+        private SyncedKey _interact;
+
+        private InputSynchronizable _input;
 		
 		private float MouseX => Input.GetAxisRaw("Mouse X");
 		private float MouseY => Input.GetAxisRaw("Mouse Y");
@@ -36,6 +38,8 @@ namespace AlterunaFPS
 			_sprint = new SyncedKey(_input, KeyCode.LeftShift);
 			_reload = new SyncedKey(_input, KeyCode.R, SyncedKey.KeyMode.KeyDown);
 			_camera = new SyncedKey(_input, KeyCode.V, SyncedKey.KeyMode.ToggleKeyDown);
+
+			_interact = new SyncedKey(_input, KeyCode.E, SyncedKey.KeyMode.KeyDown);
 		}
 	}
 }
