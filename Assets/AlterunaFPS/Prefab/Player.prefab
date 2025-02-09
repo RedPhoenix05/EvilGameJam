@@ -2626,6 +2626,10 @@ MonoBehaviour:
   projectileInstantiator: {fileID: 1655423203624157385}
   ignoredColliders:
   - {fileID: 969681678009396848}
+  projectileVelocity: 20
+  projectileBaseDamage: 10
+  projectileTimeScale: 10
+  GunRoot: {fileID: 8601427864537486362}
   FirePoint: {fileID: 9155886125936856618}
   IKController: {fileID: 1709546744555315894}
   GunAnimator: {fileID: 8601427866144109624}
@@ -2635,6 +2639,7 @@ MonoBehaviour:
   GunMagazineSize: 3
   GunFireTime: 0.33
   GunReloadTime: 2
+  DistanceFromBody: 0.3
   ZoomFov: 30
   ZoomInTime: 0.2
   ZoomOutTime: 0.18
