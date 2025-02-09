@@ -10,6 +10,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] bool teleportHome;
     [SerializeField] float teleportTimer = 20.0f;
 
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip throwSound;
+
     Rigidbody rb;
     Vector3 originalPosition = Vector3.zero;
     Quaternion originalRotation = Quaternion.identity;
@@ -56,6 +59,8 @@ public class Interactable : MonoBehaviour
     public void Throw(Vector3 throwVector, float throwAngularVelocity)
     {
         Drop();
+
+        source.PlayOneShot(throwSound);
 
         rb.velocity = throwVector;
         rb.angularVelocity = new Vector3(throwAngularVelocity * 360 * Mathf.Deg2Rad, 0.0f, 0.0f);
