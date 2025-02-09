@@ -15,7 +15,7 @@ namespace AlterunaFPS
 		public float projectileTimeScale = 10.0f;
 		
 		[Header("Gun Extras")]
-        //public Transform GunRoot;
+        public Transform GunRoot;
         public Transform FirePoint;
 		public IKControl IKController;
 		public Animator GunAnimator;
@@ -23,7 +23,7 @@ namespace AlterunaFPS
 		public int GunMagazineSize = 5;
 		public float GunFireTime = 0.2f;
 		public float GunReloadTime = 2.35f;
-		//public float DistanceFromBody = 0.3f;
+		public float DistanceFromBody = 0.3f;
 		[Header("Aiming")]
 		public float ZoomFov = 30f;
 		public float ZoomInTime = 0.2f;
@@ -33,18 +33,18 @@ namespace AlterunaFPS
 		private float _gunReloadCooldown;
 		private int _gunMagazine;
 		
-		//private float _gunBaseHeight;
+		private float _gunBaseHeight;
 		
 		private Transform _gunLooker;
 
 		private void InitializeGun()
 		{
-			//_gunBaseHeight = GunRoot.localPosition.y;
+			_gunBaseHeight = GunRoot.localPosition.y;
 			
-			// create a new object to help manage the gun rotation
-			//_gunLooker = new GameObject("GunLooker").transform;
-			//_gunLooker.SetParent(GunRoot);
-			//_gunLooker.position = GunRoot.position;
+			 //create a new object to help manage the gun rotation
+			_gunLooker = new GameObject("GunLooker").transform;
+			_gunLooker.SetParent(GunRoot);
+			_gunLooker.position = GunRoot.position;
 		}
 
 		private void ResetAmmo()
@@ -141,12 +141,12 @@ namespace AlterunaFPS
 				projectile.GetComponent<Snowball>().SetUp(senderID, ignoredColliders, baseDamage, timeScale, source.forward * velocity);
             }
 			
-            /*
-			GunAnimator.Play(_animIDGunFire);
+            
+			//GunAnimator.Play(_animIDGunFire);
 			
 			_gunFireCooldown = GunFireTime;
 			_gunMagazine--;
-			
+			/*
 			float currentPenetration = penetration;
 			float hitDistance = 40f;
 			
@@ -194,7 +194,7 @@ namespace AlterunaFPS
 						DrawLine(i, Color.black);
 				}
 			}
-
+			
 			EfxManager.Instance.PlayBullet(origin, direction, hitDistance / 100f);
 
 			void DrawLine(int i, Color color, float duration = 1f)
