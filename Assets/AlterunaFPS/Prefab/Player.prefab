@@ -2415,6 +2415,7 @@ GameObject:
   - component: {fileID: 8601427866244821769}
   - component: {fileID: 8601427866244821771}
   - component: {fileID: 1709546744555315895}
+  - component: {fileID: 4125779643889546934}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2550,9 +2551,9 @@ MonoBehaviour:
   BulletCollisionLayers:
     serializedVersion: 2
     m_Bits: 129
-  GunMagazineSize: 19
-  GunFireTime: 0.2
-  GunReloadTime: 2.35
+  GunMagazineSize: 3
+  GunFireTime: 0.33
+  GunReloadTime: 2
   DistanceFromBody: 0.4
   ZoomFov: 30
   ZoomInTime: 0.2
@@ -2646,6 +2647,18 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4125779643889546934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337464628717331057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a56dbaaeb262146bbeec993219ad73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5412847022820931746
 GameObject:
   m_ObjectHideFlags: 0
