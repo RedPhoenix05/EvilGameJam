@@ -51,6 +51,8 @@ MonoBehaviour:
   disableOnGrab:
   - {fileID: 279581966687501493}
   - {fileID: 602363362359322535}
+  teleportHome: 0
+  teleportTimer: 20
 --- !u!54 &4953507950510913230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -93,10 +95,10 @@ MonoBehaviour:
   baseDamage: 0
   timeDamageScale: 20
   maxTimeDamage: 60
-  minVelocity: 15
+  minVelocity: 5
   maxVelocity: 40
-  minVelocityDamage: 25
-  maxVelocityDamage: 50
+  minVelocityDamage: 15
+  maxVelocityDamage: 30
   destroyOnCollision: 0
 --- !u!1 &4008639177737585353
 GameObject:

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7601212691669446694}
   - component: {fileID: -7445169572966727590}
   - component: {fileID: 8189303765560416933}
+  - component: {fileID: 2013352866494062222}
   m_Layer: 11
   m_Name: Knife Prefab
   m_TagString: Untagged
@@ -133,6 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabCollider: {fileID: 5381546948215539007}
+  disableOnGrab:
+  - {fileID: 8909974310754723139}
+  teleportHome: 0
+  teleportTimer: 20
 --- !u!54 &8189303765560416933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,6 +165,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2013352866494062222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504167741087382739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422adf43f39eb4b49acec09cbe981c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 0
+  timeDamageScale: 20
+  maxTimeDamage: 60
+  minVelocity: 5
+  maxVelocity: 40
+  minVelocityDamage: 15
+  maxVelocityDamage: 30
+  destroyOnCollision: 0
 --- !u!1001 &8750242151087176262
 PrefabInstance:
   m_ObjectHideFlags: 0

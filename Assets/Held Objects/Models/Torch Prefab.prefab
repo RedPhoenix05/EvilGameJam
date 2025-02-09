@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6857466248329241697}
   - component: {fileID: 6288957324544654574}
   - component: {fileID: 2658970095207703701}
+  - component: {fileID: 4437975142268819256}
   m_Layer: 11
   m_Name: Torch Prefab
   m_TagString: Untagged
@@ -74,6 +75,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabCollider: {fileID: 6972717943008032984}
+  disableOnGrab:
+  - {fileID: 126350566031352767}
+  teleportHome: 0
+  teleportTimer: 20
+--- !u!114 &4437975142268819256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824373649487966199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422adf43f39eb4b49acec09cbe981c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 25
+  timeDamageScale: 20
+  maxTimeDamage: 60
+  minVelocity: 5
+  maxVelocity: 40
+  minVelocityDamage: 15
+  maxVelocityDamage: 30
+  destroyOnCollision: 0
 --- !u!1 &8243090590878821396
 GameObject:
   m_ObjectHideFlags: 0
